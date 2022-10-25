@@ -1,0 +1,18 @@
+.start-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    text-align: center;
+    z-index: 100;
+}
+
+.start-page > h1,
+.start-page > p {
+    color: #293264;
+}
+
+.start-page > h1 {
+    font-size: 3em;
+}

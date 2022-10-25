@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import StartPage from "./components/StartPage.js"
+import QuizPage from "./components/QuizPage.js"
+import React, {useState} from 'react'
 
 function App() {
+  /* const [page, setPage] = useState(<StartPage togglePage={togglePage}/>) */
+  const [page, setPage] = useState(<QuizPage/>)
+
+
+  function togglePage() {
+    setPage(<QuizPage/>)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {page}
+
+      <div className="yellow-blob"/>
+      <div className="blue-blob"/>
     </div>
   );
 }
