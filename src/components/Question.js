@@ -1,6 +1,7 @@
 import "../styles/Question.css"
 import React, { useState } from 'react'
 import { PropTypes } from 'prop-types'
+import he from "he"
 
 function Question(props) {
     const [stateQuestion, setStateQuestion] = useState(() => {
@@ -14,21 +15,22 @@ function Question(props) {
     const correctAns = props.correct_answer
     const htmlArray = stateQuestion.map((e, i) => {
         return (
-            <div className="answer" key={i}>
+            <div className={props.showResult ? e === props.correct_answer ? "answer correct" : "answer incorrect" : "answer"} key={i}>
                 <input 
                     type="radio" 
                     id={`${props.id}${i}`} 
                     name={`${props.id}`} 
                     value={e === correctAns ? true : false}
-                    onChange={props.handleChange}/>
-                <label htmlFor={`${props.id}${i}`}>{e}</label>
+                    onChange={props.handleChange}
+                    disabled={props.showResult ? true : false}/>
+                <label htmlFor={`${props.id}${i}`}>{he.decode(e)}</label>
             </div>
             )
     })
 
     return (
         <div className="question">
-            <h2 className="question-title">{props.question}</h2>
+            <h2 className="question-title">{he.decode(props.question)}</h2>
             <div className="question-choices">
                 {htmlArray}
             </div>
@@ -42,7 +44,8 @@ Question.propTypes = {
     question: PropTypes.string,
     correct_answer: PropTypes.string,
     incorrect_answers: PropTypes.array,
-    handleChange: PropTypes.func
+    handleChange: PropTypes.func,
+    showResult: PropTypes.bool
 }
 
 export default Question

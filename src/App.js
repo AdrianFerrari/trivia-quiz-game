@@ -5,16 +5,16 @@ import React, {useState} from 'react'
 
 function App() {
   /* const [page, setPage] = useState(<StartPage togglePage={togglePage}/>) */
-  const [page, setPage] = useState(<QuizPage/>)
+  const [changePage, setChangePage] = useState(false)
 
 
   function togglePage() {
-    setPage(<QuizPage/>)
+    setChangePage(true)
   }
 
   return (
     <div className="App">
-      {page}
+      {changePage ? <QuizPage/> : <StartPage togglePage={togglePage}/>}
 
       <div className="yellow-blob"/>
       <div className="blue-blob"/>

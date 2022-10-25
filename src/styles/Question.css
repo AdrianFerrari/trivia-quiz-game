@@ -51,6 +51,20 @@ label {
     border: 2px solid #D6DBF5;
 }
 
+.correct,
+.correct:has(input:checked) {
+    background: #94D7A2;
+    border: 2px solid #94D7A2;
+}
+
+.incorrect {
+    opacity: 0.5;
+}
+
+.incorrect:has(input:checked) {
+    background: #F8BCBC;
+}
+
 .bottom-section {
     align-self: center;
     display: flex;

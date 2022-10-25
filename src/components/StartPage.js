@@ -6,7 +6,7 @@ function StartPage(props) {
     return (
         <div className="start-page">
             <h1>Quizzical</h1>
-            <p>Test you knowdlege on science, entretainment, history and more</p>
+            <p>Test you knowdlege on science, entertainment, history and more</p>
             <button onClick={props.togglePage}>Start Quiz</button>
         </div>
     )
