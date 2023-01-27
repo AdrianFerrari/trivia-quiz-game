@@ -4,7 +4,6 @@ import QuizPage from "./components/QuizPage.js"
 import React, {useState} from 'react'
 
 function App() {
-  /* const [page, setPage] = useState(<StartPage togglePage={togglePage}/>) */
   const [changePage, setChangePage] = useState(false)
 
 

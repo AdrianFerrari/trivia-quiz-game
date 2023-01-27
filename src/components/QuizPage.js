@@ -45,7 +45,6 @@ function QuizPage() {
     }
 
     function scoreAnswers() {
-        console.log(questionStates)
         for(const answers in questionStates) {
             setFinalScore(prevCount => questionStates[answers] ? prevCount + 1 : prevCount)
         }
